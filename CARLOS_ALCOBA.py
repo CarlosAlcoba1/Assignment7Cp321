@@ -2,10 +2,8 @@ import numpy as np
 from dash import Dash, html, dcc, callback, Output, Input
 import pandas as pd
 import plotly.express as px
-import ssl
 
 def create_dataset():
-    ssl._create_default_https_context = ssl._create_unverified_context
     df = pd.read_html('https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_finals')[3] # cols-> Year	Winners	Score	Runners-up	Venue	Location	Attendance	Ref.
 
     for col in ['Winners', 'Runners-up', 'Location']:
